@@ -9,14 +9,12 @@ function updateProductDetails() {
 
     const productDetails = {
         hero11: {
-            image: '/images/hero11.png',
             sku: 'SKU: HERO-11',
             name: 'Hero11',
             price: 5, // Price in euros per day
             description: 'Hero11 is the latest in our line of action cameras, offering unparalleled performance and durability.'
         },
         hero12: {
-            image: '/images/hero12.png',
             sku: 'SKU: HERO-12',
             name: 'Hero12',
             price: 10, // Price in euros per day
@@ -26,11 +24,17 @@ function updateProductDetails() {
 
     const product = productDetails[selectedProduct]; // Get the details of the selected product
 
-    document.getElementById('productImage').src = product.image;
+    // Update product details
     document.getElementById('productSKU').textContent = product.sku;
     document.getElementById('productName').textContent = product.name;
     document.getElementById('productPrice').textContent = product.price + '€ par jour';
     document.getElementById('productDescription').textContent = product.description;
+
+    // Hide all product images
+    document.querySelectorAll('.product-image').forEach(img => img.style.display = 'none');
+
+    // Show the selected product image
+    document.getElementById(`${selectedProduct}Image`).style.display = 'block';
 
     const startDate = document.getElementById('startDateInput').value; // Get the start date value
     const endDate = document.getElementById('endDateInput').value; // Get the end date value
@@ -40,7 +44,6 @@ function updateProductDetails() {
         document.getElementById('totalPrice').textContent = '0€'; // Set total price to 0 if no dates are selected
     }
 }
-
 function initializeDatePickers() {
     const startDateInput = document.getElementById('startDateInput'); // Get the start date input element
     const endDateInput = document.getElementById('endDateInput'); // Get the end date input element
