@@ -1,0 +1,14 @@
+.footer {
+    width: 100%; /* Largeur du footer */
+    height: 50px; /* Hauteur du footer */
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    padding: 10px; /* Espace autour du texte */
+    position: fixed; /* Positionnement fixe */
+    bottom: 0; /* En bas de la page */
+    left: 0; /* À gauche de la page */
+    right: 0; /* À droite de la page */
+};
+
+
